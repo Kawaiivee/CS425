@@ -1,0 +1,16 @@
+GIT COMMANDS
+
+#Initialize a git folder
+git init
+git remote add <URL'.git' here>
+git clone <URL here>
+
+#Fetching changes (before you start working)
+git fetch origin master
+git merge origin/master
+
+#Commiting changes (when you finished making local copies)
+git add <filename here>
+git status
+git commit -m "<message of your commit here>"
+git push origin master
