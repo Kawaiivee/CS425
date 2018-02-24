@@ -125,7 +125,7 @@ using JDBC as a back-end and Node.js, html, CSS as a front-end
 %*********************************************************************************************
 %*********************************************************************************************
 
-\begin{tabular}{| p{1cm}|p{9cm} |p{5cm}|}
+\begin{tabular}{| C{1cm}|p{9cm} |p{5cm}|}
   \hline
   \# & Requirement Description & Testing Criteria \\
   \hline
