@@ -1,0 +1,11 @@
+#############################################################################
+#			Welcome to the Latex Report folder!
+#
+#############################################################################
+
+Possible Actions :
+(1)Convert Report.tex file to PDF:
+	   In order to perform this operation you have to install some library
+	   function that can help you. We use pdflatex in this specific project.
+	   (sudo apt install texlive-latex-base or the specific name in your OS)
+	   

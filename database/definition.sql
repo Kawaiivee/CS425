@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS Customer
 	card_info	int,
 	address		varchar(50) not null,
 	email		varchar(50) not null,
-	password	
+	password	varchar(50) not null,	-- We probably want to fix this eventually
 	PRIMARY KEY (customer_id)
    );
 
@@ -64,8 +64,8 @@ CREATE TABLE IF NOT EXISTS Category
 Creating Cart
 */
 DROP TABLE IF EXISTS Cart;
-CREATE TABLE IF NOT EXISTS Cart	
-   (  
+CREATE TABLE IF NOT EXISTS Cart
+       (
 	customer_id 	int,
 	cart_line	int AUTO_INCREMENT ,
 	product_id	int not null,
@@ -96,7 +96,7 @@ Creating Employee
 DROP TABLE IF EXISTS Employee;
 CREATE TABLE IF NOT EXISTS Employee	
    (  
-	employee_type 	varchar(20)
+	employee_type 	varchar(20),
 	employee_id	int NOT NULL,
 	region		varchar(50) NOT NULL,
 	email		varchar(50),
@@ -121,11 +121,11 @@ Creating warehouse
 DROP TABLE IF EXISTS Warehouse;
 CREATE TABLE IF NOT EXISTS Warehouse	
    (  
-	region	 	varchar(50)
+	region	 	varchar(50),
 	warehouse_id	int NOT NULL,
 	address		varchar(50) NOT NULL,
 	manager_id	int,
-	primary key (warehouse_id)
+	primary key (warehouse_id),
 	FOREIGN KEY(manager_id) REFERENCES Employee(employee_id)
    );   
 
@@ -165,13 +165,5 @@ CREATE TABLE IF NOT EXISTS Invoice
 	FOREIGN KEY (product_id) REFERENCES Product(product_id),
 	primary key (invoice_no)
 	
-   );   
-
-
-USE mysql;
-SHOW databases;
-USE ecommerce;
-SHOW tables;
-SHOW columns from Customer;
-SHOW columns from Product;
-SHOW columns from Cart;
+   );
+   
