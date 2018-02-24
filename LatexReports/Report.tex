@@ -119,13 +119,27 @@ using JDBC as a back-end and Node.js, html, CSS as a front-end
 %*********************************************************************************************
 %*********************************************************************************************
 %
-%				       Design
+%				       Requirements
 %
 %*********************************************************************************************
 %*********************************************************************************************
 
-
-
+\begin{tabular}{|l| l |l}
+  \hline
+  \# & Requirement Description & Testing Criteria \\
+  \hline
+  R1 & The application shall allow customers to register with the application. The application shall
+  present the user with a registration form with the following fields: Customer Name, Contact Name
+  , Email, phone, region, address, major product line category. & User enters registration information
+  and the datta is stored in the database \\
+  \hline
+  R2 & Once a customer registers with the application, the application shall generate a unique customer id. &
+  A unique customer is stored in the database.\\
+  \hline
+  R3 & The system shall allow the customer to enter a password for her account. The password shall be 8
+  characters long and shall have at least one distinctive character and one uppercase character and a mixed alphanumeric value. & Customers password shal be encrypted and stored in the database.\\
+  \hline
+\end{tabular}
 \pagebreak
 \section*{Design}
 
