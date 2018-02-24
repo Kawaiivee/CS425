@@ -9,5 +9,9 @@ Possible Actions :
 	   function that can help you. We use pdflatex in this specific project.
 	   (sudo apt install texlive-latex-base or the specific name in your OS)
 
+	   IF everything is installed then use:
 	   
-	   
+	   'bash cmd.sh pdf'
+
+(2)Spell check your work :
+	 'bash cmd.sh spell'
