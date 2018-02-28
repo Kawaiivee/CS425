@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.27)  28 FEB 2018 13:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.27)  28 FEB 2018 13:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -956,9 +956,9 @@ File: figures/ERD.png Graphic file (type png)
 
 <use figures/ERD.png>
 Package pdftex.def Info: figures/ERD.png used on input line 204.
-(pdftex.def)             Requested size: 326.38533pt x 398.33858pt.
+(pdftex.def)             Requested size: 466.26971pt x 569.05511pt.
 
-Overfull \vbox (62.07935pt too high) has occurred while \output is active []
+Overfull \vbox (232.79588pt too high) has occurred while \output is active []
 
 
 [5 <./figures/ERD.png>]
@@ -968,7 +968,7 @@ File: figures/ImplementationFigure.png Graphic file (type png)
 <use figures/ImplementationFigure.png>
 Package pdftex.def Info: figures/ImplementationFigure.png used on input line 21
 1.
-(pdftex.def)             Requested size: 502.43509pt x 398.33858pt.
+(pdftex.def)             Requested size: 430.65517pt x 341.43306pt.
  [6 <./figures/ImplementationFigure.png>] [7] [8]
 Overfull \hbox (113.81044pt too wide) in paragraph at lines 256--258
 []$\OT1/cmtt/m/n/12 http : / / testingfreak . com / waterfall-[]model-[]softwar
