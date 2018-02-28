@@ -102,7 +102,7 @@
 \begin{myspace}{1.7}
         
 \section*{Introduction}  
-	This project consist of a web solution for an e-commerce web application regarding product distribution. From the web application, customers will have access to querying products from different suppliers. Employees of the web application will have specific views tailored to their tasks. The project itself will be conducted using a waterfall model \cite{waterfall} for development.
+	This project consist of a web solution for an e-commerce web application regarding product distribution. From the web application, customers will have access to querying products from different suppliers. Employees of the web application will have specific views tailored to their tasks. The project itself will be conducted using a waterfall model \cite {waterfall} for development.
 	The waterfall model consists of these ordered steps: Requirements, Design, Implementation, Verification, and Maintenance.
 	The requirements that are set out for the development of a software project are constraints, usages, views, functions, and any other interaction between users and the software's interface. For this project, the requirements are listed as a list of functionalities that different users have with the product distribution system.
 	The design of a software project is the development of blueprints or plans for how the development will be implemented. Design also consists of determining what medium and environment the project will be developed in. For the purposes of this project, the design consists of using Github repository as a functioning interaction between the project developers to create files necessary for the database driven software.
@@ -167,7 +167,7 @@
 \end{center}
 \pagebreak
 \section*{Implementation}
-The implementation of the project will be a web-based application using JDBC program files as a back-end and Node.js, HTML, CSS, and PHP program files as a front-end. The development environment that the project developers will use is the UNIX operating system environment and tools connected with Github serving as a functioning repository for back-end and front-end code to be updated as the project progresses. The web application will be hosted on an apache web server linked to a main computer with Ubuntu Linux as its operating system. This main computer  can also be accessed via SSH for the project developers. Below is a diagram for the method of implementation:
+	The implementation of the project will be a web-based application using JDBC program files as a back-end and Node.js, HTML, CSS, and PHP program files as a front-end. The development environment that the project developers will use is the UNIX operating system environment and tools connected with Github serving as a functioning repository for back-end and front-end code to be updated as the project progresses. The web application will be hosted on an apache web server linked to a main computer with Ubuntu Linux as its operating system. This main computer  can also be accessed via SSH for the project developers. Below is a diagram for the method of implementation:
 \subsection*{}
 \begin{center}
           \includegraphics[ height=14cm]{ImplementationFigure} %width=xxcm
@@ -182,7 +182,10 @@ The implementation of the project will be a web-based application using JDBC pro
 %*********************************************************************************************
 \pagebreak
 \section*{Verification}
-
+	The verification of the project will be performed by implementing different testing methods \cite {testmethod} with the web application. Firstly, unit testing will be implemented by testing individual aspects of the web application. For example, a customer is able to complete transaction to his or her request. So the implementation of unit testing here would exist as making sure each individual part of the transaction occurs correctly. In accordance to the ERD, the 'Invoice' is an entity with data that is updated atomically; specifically, this is the record of a transaction a customer may request. To unit test the entire transaction, code will be debugged with each iteration of the program until the transaction results in a feasible output (i.e. the invoice). By implementing unit testing during the development of the web application, each individual function of the web application will have higher success of functioning correctly because each function would have been tested to work individually.
+	System testing is also a necessity for the project because system testing captures the users' perspectives and views, which is important in keeping integritive yet private data. System testing is best described as having a box with an input and output where specific users have specific views. In this project for example, if a customer orders a product, a customer would like to know what warehouse it is coming from but may not need to know who the supplier of the product is.
+	Integration testing is the methodology of testing where developers test to see if their software works with different hardwares and interfaces. To actually have users of the application, users must be able to use their own devices and hardwares to access the application, which makes integral testing necesssary.
+	Performance testing is a method of testing to see the efficiency of the application. For this project, performance testing will be implemented by having the product distribution service have relevant information readily available for different users.
 
 
 
@@ -197,7 +200,7 @@ The implementation of the project will be a web-based application using JDBC pro
 %*********************************************************************************************
 \pagebreak
 \section*{Maintenance}  
-
+	The maintenance of the project will be performed with various concepts to keep the deployed application stable. 
 
 
 
@@ -212,9 +215,11 @@ The implementation of the project will be a web-based application using JDBC pro
 \pagebreak
 \begin{thebibliography}{9}
 \bibitem{waterfall}
-   \textit{Waterfall Model and Testing Methodology}\\
-   \url{https://www.guru99.com/testing-methodology.html#2}
-
+   \textit{Waterfall Model}\\
+   \url{http://testingfreak.com/waterfall-model-software-testing-advantages-disadvantages-waterfall-model/}
+\bibitem{testmethod}
+   \textit{Testing Methodology}\\
+   \url{https://www.guru99.com/testing-methodology.html}
 \end{thebibliography}
   
 \end{myspace}
