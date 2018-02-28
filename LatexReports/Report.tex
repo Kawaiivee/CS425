@@ -121,7 +121,54 @@
 \pagebreak
 \section*{Requirements}  
 
+%*********************************************************************************************
+%*********************************************************************************************
+%
+%				       Requirements
+%
+%*********************************************************************************************
+%*********************************************************************************************
 
+\begin{table}[]
+\centering
+\label{my-label}
+\begin{tabular}{| p{.5cm}|p{9cm} |p{5cm}|}
+\#  & Requirement Description                                                                                                                                                                                                                                                                                & Testing Criteria                                                                                                                                                                                                                                                               \\
+R1  & The application shall allow customers to register with the application. The application shall present the user with a registration form with the following fields: Customer Name, Contact Name, Email, phone, region, address, major product line category (research a list that fits most customers). & User enters registration information and the data is stored in the Customer database.                                                                                                                                                                                        \\
+R2  & Once a customer registers with the application the application shall generate a unique customer id.                                                                                                                                                                                                    & A unique customer is stored in the database.                                                                                                                                                                                                                                 \\
+R3  & The system shall allow the customer to enter a password for her account. The password shall at least be 8 characters long and shall have at least one distinctive character and one uppercase character and a mixed alphanumeric value.                                                                & Customers password shall be encrypted and stored in the database.                                                                                                                                                                                                            \\
+R4  & The customer shall be able be able to visit his/her profile within the application and be able to update his/her profile information only.                                                                                                                                                             & Customers information in the database is updated according to user input.                                                                                                                                                                                                    \\
+R5  & The customer shall be able to query products online. with the following attributes: Name, Description, Categories, Units, Price.                                                                                                                                                                       & User enters product information and the application shows a list of relevant products.                                                                                                                                                                                       \\
+R6  & The application shall allow the Supplier to register with the application. The application shall present the user with a registration form with the following fields: name, email, phone number, and address.                                                                                          & Supplier enters registration information and the data is stored in the Supplier database.                                                                                                                                                                                    \\
+R7  & Once the supplier registers their product with the application, the application shall generate a unique product id and will also update the Categories database to include any new categories created or increase the relevance of any categories that exist already.                                  & 足      A unqiue product is stored in the Products database and the product is visible to any any customer within the application. Categories Database is updated accordingly based on how products are loaded onto the application.                                          \\
+R8  & The customer should be able to add/remove products to their cart. Even when the user logs out, the cart is saved with all products from the previous session(s).                                                                                                                                       & Cart database, corresponding to the customer, is updated accordingly. Cart keeps products from the previous session until checkout or explicitly removed by the user. Cart displays price, quantity, title, and image of each desired product. Cart displays total expenses. \\
+R9  & The customer shall have the option (button) to remove all products from the cart in one instance.                                                                                                                                                                                                      & A pop-up window confirms the deletion of all products in cart, then cart is emptied entirely.                                                                                                                                                                                \\
+\end{tabular}
+\end{table}
+%*********************************************************************************************
+%*********************************************************************************************
+%
+%				       Requirements
+%
+%*********************************************************************************************
+%*********************************************************************************************
+
+\begin{table}[]
+\centering
+\label{my-label}
+\begin{tabular}{| p{.5cm}|p{9cm} |p{5cm}|}
+\#  & Requirement Description                                                                                                                                                                                                                                                                                & Testing Criteria                                                                                                                                                                                                                                                               \\
+R10 & The customer shall have the option to checkout with paypal or credit/debit card.                                                                                                                                                                                                                       & The application verifies the transaction. Once the transaction is verified, an e-mail confirmation of their placed ordered is sent to the customer. An e-mail confirmation is sent to the seller.                                                                            \\
+R11 & Customer gets asked if he/she wants to save their payment information for future orders.                                                                                                                                                                                                               & Pop-up window confirms if the user wants to save payment information; if yes, payment information is stored.                                                                                                                                                                 \\
+R12 & The customer shall be able to monitor the status of their order.                                                                                                                                                                                                                                       & The application allows the customer to view orders placed; the application                                                                                                                                                                                                   \\
+R13 & The customer shall be able to search for products explicitly using a search engine within the application.                                                                                                                                                                                             & The application searches the Categories or Products databases to display items.                                                                                                                                                                                              \\
+R14 & The customer shall be able to view their order history.                                                                                                                                                                                                                                                & The application provides a list of all orders made by the customer and the status and time stamp of each order.                                                                                                                                                              \\
+R15 & The application shall display the status of each product.                                                                                                                                                                                                                                              & The application searches through the Product Database and assigns the status (In stock, Out of Stock, etc...) to the product based on quantity.                                                                                                                              \\
+R16 & The application shall allow registered customers to sign-in via a sign-in page.                                                                                                                                                                                                                        & The sign-in page searches through the customer database to authenticate the user.                                                                                                                                                                                            \\
+R17 & The application shall automatically display the most popular categories on the home page.                                                                                                                                                                                                              & The application should keep track of what categories and products are frequently searched for.                                                                                                                                                                               \\
+R18 & The application shall allow warehouse managers to register with the application. The application shall present the warehouse manager with a registration form with the following attributes: Name, address, warehouse\_id, special password (provided by the company).                                 & The data is stored in the warehouse database and a unique manager id created.                                                                                                                                                                                                \\
+\end{tabular}
+\end{table}
 
 %*********************************************************************************************
 %*********************************************************************************************
@@ -131,28 +178,17 @@
 %*********************************************************************************************
 %*********************************************************************************************
 
-\begin{tabular}{| p{1cm}|p{9cm} |p{5cm}|}
-  \hline
-  \# & Requirement Description & Testing Criteria \\
-  \hline
-  R1 &
-  The application shall allow customers to register with the application.  The application shall present the user with a registration form with the following fields: Customer Name, Contact Name, Email, phone, region, address, major product line category (research a list that fits most customers). &
-  User enters registration information and the data is stored in the Customer database. 
-  \\
-  \hline
-  R2 & Once a customer registers with the application the application shall generate a unique customer id. &
-  A unique customer is stored in the database.\\
-  \hline
-  R3 & The system shall allow the customer to enter a password for her account. The password shall be 8
-  characters long and shall have at least one distinctive character and one uppercase character and a mixed alphanumeric value. & Customers password shal be encrypted and stored in the database.\\
-  \hline
-  R4 & The system shall allow the customer to enter a password for her account. The password shall be 8
-  characters long and shall have at least one distinctive character and one uppercase character and a mixed alphanumeric value. & Customers password shal be encrypted and stored in the database.\\
-  \hline
+\begin{table}[]
+\centering
+\label{my-label}
+\begin{tabular}{| p{.5cm}|p{9cm} |p{5cm}|}
+\#  & Requirement Description                                                                                                                                                                                                                                                                                & Testing Criteria                                                                                                                                                                                                                                                               \\
+R19 & Warehouse managers can view customers in their region.                                                                                                                                                                                                                                                 & The application shall allow warehouse managers to view a list of customers (Name, address, region, and e-mail) in his/her region only.                                                                                                                                       \\
+R20 & The application shall allow warehouse managers to view the inventory in their warehouse.                                                                                                                                                                                                               & The application should provide a list of all products that are in their respective warehouse.                                                                                                                                                                                \\
+R21 & The application shall emphasize to the warehouse manager which products need to be prioritized for shipping.                                                                                                                                                                                           & By checking the time stamps of the orders or shipping service used, the application will output a filtered list of products.                                                                                                                                                 \\
+R22 & Administrators have the priviledges of modyifing warehouses, product, employee, invoices, and customer data.                                                                                                                                                                                           & Administrator account(s) with these priviledges will be created.                                                                                                                                                                                                            
 \end{tabular}
-\pagebreak
-\section*{Design}
-
+\end{table}
 
 %*********************************************************************************************
 %*********************************************************************************************
@@ -161,16 +197,18 @@
 %
 %*********************************************************************************************
 %*********************************************************************************************
+\pagebreak
+\section*{Design}
 \subsection*{Entity Relationship Diagram}
 \begin{center}
-          \includegraphics[ height=21cm]{ERD} %width=xxcm
+          \includegraphics[ height=14cm]{ERD} %width=xxcm
 \end{center}
 \pagebreak
 \section*{Implementation}
 	The implementation of the project will be a web-based application using JDBC program files as a back-end and Node.js, HTML, CSS, and PHP program files as a front-end. The development environment that the project developers will use is the UNIX operating system environment and tools connected with Github serving as a functioning repository for back-end and front-end code to be updated as the project progresses. The web application will be hosted on an apache web server linked to a main computer with Ubuntu Linux as its operating system. This main computer  can also be accessed via SSH for the project developers. Below is a diagram for the method of implementation:
 \subsection*{}
 \begin{center}
-          \includegraphics[ height=14cm]{ImplementationFigure} %width=xxcm
+          \includegraphics[ height=20cm]{ImplementationFigure} %width=xxcm
 \end{center}
 
 %*********************************************************************************************
@@ -200,7 +238,7 @@
 %*********************************************************************************************
 \pagebreak
 \section*{Maintenance}  
-	The maintenance of the project will be performed with various concepts to keep the deployed application stable. 
+	The maintenance of the project will be performed with various concepts to keep the deployed application stable. On a micro level, the development of the back-end (server side content) using JDBC will serve to maintain the integrity of the data as it is updated per user request. On the macro level, the maintenance of the project may consist of the project fixing bugs that users may find from interactions with the software, which would be refered to as patches. Additionally, maintenance includes the updating of present software's features with new features that make the user's experience easier or more efficient.
 
 
 

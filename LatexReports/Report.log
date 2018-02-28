@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.27)  28 FEB 2018 10:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.27)  28 FEB 2018 13:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -595,7 +595,14 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 \f@ncyO@erf=\skip59
 \f@ncyO@olf=\skip60
 \f@ncyO@orf=\skip61
-) (./Report.aux)
+) (./Report.aux
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+)
 \openout1 = `Report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
@@ -612,8 +619,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
 LaTeX Font Info:    ... okay on input line 16.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 16.
 LaTeX Font Info:    ... okay on input line 16.
-
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count137
 \scratchdimen=\dimen188
@@ -712,57 +718,294 @@ e ignored
                    \relax 
 l.122 \section
               *{Requirements} [1]
-Underfull \hbox (badness 5592) in paragraph at lines 140--142
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 132.
+
+
+Underfull \hbox (badness 5592) in paragraph at lines 137--138
 \OT1/cmr/m/n/12 for-ma-tion and the data
  []
 
-[2] <figures/ERD.png, id=27, 1138.2525pt x 1389.19pt>
-File: figures/ERD.png Graphic file (type png)
- <use figures/ERD.png>
-Package pdftex.def Info: figures/ERD.png used on input line 166.
-(pdftex.def)             Requested size: 489.59535pt x 597.50787pt.
 
-[3 <./figures/ERD.png>]
-<figures/ImplementationFigure.png, id=36, 532.99126pt x 422.57875pt>
+Underfull \hbox (badness 1540) in paragraph at lines 139--140
+[]|\OT1/cmr/m/n/12 Customers pass-word shall
+ []
+
+
+Underfull \hbox (badness 1975) in paragraph at lines 140--141
+[]|\OT1/cmr/m/n/12 Customers in-for-ma-tion in
+ []
+
+
+Underfull \hbox (badness 1005) in paragraph at lines 142--143
+\OT1/cmr/m/n/12 in-for-ma-tion and the data
+ []
+
+
+Underfull \hbox (badness 1371) in paragraph at lines 142--143
+\OT1/cmr/m/n/12 is stored in the Sup-plier
+ []
+
+Missing character: There is no è in font cmr12!
+Missing character: There is no ¶ in font cmr12!
+Missing character: There is no ³ in font cmr12!
+
+Underfull \hbox (badness 1092) in paragraph at lines 143--144
+\OT1/cmr/m/n/12 in the Prod-ucts database
+ []
+
+
+Underfull \hbox (badness 2221) in paragraph at lines 143--144
+\OT1/cmr/m/n/12 and the prod-uct is vis-i-
+ []
+
+
+Underfull \hbox (badness 1242) in paragraph at lines 143--144
+\OT1/cmr/m/n/12 ble to any any cus-tomer
+ []
+
+
+Underfull \hbox (badness 1424) in paragraph at lines 143--144
+\OT1/cmr/m/n/12 prod-ucts are loaded onto
+ []
+
+
+Underfull \hbox (badness 1708) in paragraph at lines 144--145
+\OT1/cmr/m/n/12 dated ac-cord-ingly. Cart
+ []
+
+
+Underfull \hbox (badness 2922) in paragraph at lines 144--145
+\OT1/cmr/m/n/12 keeps prod-ucts from the
+ []
+
+
+Underfull \hbox (badness 1168) in paragraph at lines 144--145
+\OT1/cmr/m/n/12 out or ex-plic-itly re-moved
+ []
+
+
+LaTeX Warning: Float too large for page by 16.70741pt on input line 147.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 156.
+
+
+Overfull \hbox (6.17065pt too wide) in paragraph at lines 161--161
+[]|\OT1/cmr/m/n/12 R10| 
+ []
+
+
+Underfull \hbox (badness 5563) in paragraph at lines 161--162
+\OT1/cmr/m/n/12 trans-ac-tion. Once the
+ []
+
+
+Overfull \hbox (6.17065pt too wide) in paragraph at lines 162--162
+[]|\OT1/cmr/m/n/12 R11| 
+ []
+
+
+Underfull \hbox (badness 4634) in paragraph at lines 162--163
+\OT1/cmr/m/n/12 the user wants to save
+ []
+
+
+Underfull \hbox (badness 7344) in paragraph at lines 162--163
+\OT1/cmr/m/n/12 pay-ment in-for-ma-tion; if
+ []
+
+
+Overfull \hbox (6.17065pt too wide) in paragraph at lines 163--163
+[]|\OT1/cmr/m/n/12 R12| 
+ []
+
+
+Underfull \hbox (badness 3417) in paragraph at lines 163--164
+\OT1/cmr/m/n/12 cus-tomer to view or-ders
+ []
+
+
+Overfull \hbox (6.17065pt too wide) in paragraph at lines 164--164
+[]|\OT1/cmr/m/n/12 R13| 
+ []
+
+
+Underfull \hbox (badness 6575) in paragraph at lines 164--165
+[]|\OT1/cmr/m/n/12 The ap-pli-ca-tion searches
+ []
+
+
+Overfull \hbox (6.17065pt too wide) in paragraph at lines 165--165
+[]|\OT1/cmr/m/n/12 R14| 
+ []
+
+
+Overfull \hbox (6.17065pt too wide) in paragraph at lines 166--166
+[]|\OT1/cmr/m/n/12 R15| 
+ []
+
+
+Underfull \hbox (badness 6575) in paragraph at lines 166--167
+[]|\OT1/cmr/m/n/12 The ap-pli-ca-tion searches
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
+\OT1/cmr/m/n/12 through the Prod-uct
+ []
+
+
+Underfull \hbox (badness 1596) in paragraph at lines 166--167
+\OT1/cmr/m/n/12 sta-tus (In stock, Out of
+ []
+
+
+Overfull \hbox (6.17065pt too wide) in paragraph at lines 167--167
+[]|\OT1/cmr/m/n/12 R16| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
+\OT1/cmr/m/n/12 through the cus-tomer
+ []
+
+
+Underfull \hbox (badness 5878) in paragraph at lines 167--168
+\OT1/cmr/m/n/12 database to au-then-ti-cate
+ []
+
+
+Overfull \hbox (6.17065pt too wide) in paragraph at lines 168--168
+[]|\OT1/cmr/m/n/12 R17| 
+ []
+
+
+Underfull \hbox (badness 3460) in paragraph at lines 168--169
+\OT1/cmr/m/n/12 track of what cat-e-gories
+ []
+
+
+Overfull \hbox (6.17065pt too wide) in paragraph at lines 169--169
+[]|\OT1/cmr/m/n/12 R18| 
+ []
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 181.
+
+
+Overfull \hbox (6.17065pt too wide) in paragraph at lines 186--186
+[]|\OT1/cmr/m/n/12 R19| 
+ []
+
+
+Underfull \hbox (badness 2359) in paragraph at lines 186--187
+[]|\OT1/cmr/m/n/12 The ap-pli-ca-tion shall al-
+ []
+
+
+Underfull \hbox (badness 2005) in paragraph at lines 186--187
+\OT1/cmr/m/n/12 view a list of cus-tomers
+ []
+
+
+Underfull \hbox (badness 2359) in paragraph at lines 186--187
+\OT1/cmr/m/n/12 e-mail) in his/her re-gion
+ []
+
+
+Overfull \hbox (6.17065pt too wide) in paragraph at lines 187--187
+[]|\OT1/cmr/m/n/12 R20| 
+ []
+
+
+Overfull \hbox (6.17065pt too wide) in paragraph at lines 188--188
+[]|\OT1/cmr/m/n/12 R21| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--189
+[]|\OT1/cmr/m/n/12 By check-ing the time
+ []
+
+
+Underfull \hbox (badness 2503) in paragraph at lines 188--189
+\OT1/cmr/m/n/12 stamps of the or-ders or
+ []
+
+
+Underfull \hbox (badness 1648) in paragraph at lines 188--189
+\OT1/cmr/m/n/12 ap-pli-ca-tion will out-put a
+ []
+
+
+Overfull \hbox (6.17065pt too wide) in paragraph at lines 189--189
+[]|\OT1/cmr/m/n/12 R22| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 189--190
+[]|\OT1/cmr/m/n/12 Administrator ac-count(s)
+ []
+
+[2] [3] [4] <figures/ERD.png, id=35, 1138.2525pt x 1389.19pt>
+File: figures/ERD.png Graphic file (type png)
+
+<use figures/ERD.png>
+Package pdftex.def Info: figures/ERD.png used on input line 204.
+(pdftex.def)             Requested size: 326.38533pt x 398.33858pt.
+
+Overfull \vbox (62.07935pt too high) has occurred while \output is active []
+
+
+[5 <./figures/ERD.png>]
+<figures/ImplementationFigure.png, id=44, 532.99126pt x 422.57875pt>
 File: figures/ImplementationFigure.png Graphic file (type png)
 
 <use figures/ImplementationFigure.png>
-Package pdftex.def Info: figures/ImplementationFigure.png used on input line 17
-3.
+Package pdftex.def Info: figures/ImplementationFigure.png used on input line 21
+1.
 (pdftex.def)             Requested size: 502.43509pt x 398.33858pt.
- [4 <./figures/ImplementationFigure.png>] [5] [6]
-Overfull \hbox (113.81044pt too wide) in paragraph at lines 218--220
+ [6 <./figures/ImplementationFigure.png>] [7] [8]
+Overfull \hbox (113.81044pt too wide) in paragraph at lines 256--258
 []$\OT1/cmtt/m/n/12 http : / / testingfreak . com / waterfall-[]model-[]softwar
 e-[]testing-[]advantages-[]disadvantages-[]waterfall-[]model/$[] 
  []
 
-[7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 226.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 226.
+[9]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 264.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 264.
  (./Report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 226.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 226.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 264.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 264.
 Package rerunfilecheck Info: File `Report.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 226.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 264.
  ) 
 Here is how much of TeX's memory you used:
- 16992 strings out of 494910
- 314029 string characters out of 6179836
- 381237 words of memory out of 5000000
- 19976 multiletter control sequences out of 15000+600000
+ 16996 strings out of 494910
+ 314069 string characters out of 6179836
+ 392311 words of memory out of 5000000
+ 19978 multiletter control sequences out of 15000+600000
  12169 words of font info for 45 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 55i,8n,54p,1043b,406s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,11n,54p,1043b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Report.pdf (8 pages, 268970 bytes).
+Output written on Report.pdf (10 pages, 274984 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
- 69 compressed objects within 1 object stream
- 19 named destinations out of 1000 (max. 500000)
+ 97 PDF objects out of 1000 (max. 8388607)
+ 75 compressed objects within 1 object stream
+ 21 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 
