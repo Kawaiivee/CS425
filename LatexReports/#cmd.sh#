@@ -1,5 +1,4 @@
 REPORT=Report
-
 for cmd in "$@"
 do
     case $cmd in
