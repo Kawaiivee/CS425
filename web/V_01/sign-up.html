@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <!-- Custom CSS -->  
+        <link rel="stylesheet" href="sign-up.css" type="text/css">
+
+        <title>Sign Up</title>
+    </head>
+    <body>
+        
+        <div class="container">
+            
+            <div class="row justify-content-center">
+                <!-- Company Logo -->
+                <img class="mb-0" src="ebay.png" alt="" width="210" height="150">
+            </div>
+            <div class="row justify-content-center">
+                
+                <p class="display-4">Create a Free Account!</p>
+            </div>
+            
+            <form>
+                <div class="form-group row">
+                    <div class="col-4 offset-2">
+                        <label for="firstName" class="font-weight-bold">First Name</label>
+                        <input type="text" class="form-control" id="firstNameSignUp" placeholder="First Name">
+                    </div>
+
+                    <div class="col-4">
+                        <label for="LastName" class="font-weight-bold">Last Name</label>
+                        <input type="text" class="form-control" id="lastNameSignUp" placeholder="Last Name">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-8 offset-2">
+                        <label for="E-MailSignUp" class="font-weight-bold">E-Mail</label>
+                        <input type="email" class="form-control" id="emailSignUp" placeholder="E-Mail Address">
+                        <small id="email" class="form-text text-muted">Enter a valid e-mail address please.</small>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-8 offset-2">
+                        <label for="password" class="font-weight-bold">Password</label>
+                        <input type="password" class="form-control" id="passwordSignUp" placeholder="Password" data-toggle="popover" data-trigger="focus" title="Password Requirements" data-placement="bottom" data-content="Make sure it's 8 characters long. At least one uppercase letter is used and ">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-8 offset-2">
+                        <label for="passwordConfirmation" class="font-weight-bold">Confirm Password</label>
+                        <input type="password" class="form-control" id="passWordSignUpConfirmation" placeholder="Re-Enter Password">
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <div class="col-4 col-md-2 offset-2">
+                        <!-- Sign In Button -->
+                        <button class="btn btn-md btn-primary btn-block mt-3 mb-5" type="submit" href="#">Register</button>
+                    </div>  
+                </div>
+                
+                
+                
+            </form><!-- ./Form-->
+            
+        </div><!-- ./Container-->
+        
+        
+        
+        
+    
+        
+        
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        
+        <script>
+            $(function () {
+  $('.example-popover').popover({
+    container: 'body'
+  })
+})
+            
+            $('#passwordSignUp').popover({
+                trigger: 'focus'
+            })
+        </script>
+    </body>
+</html>
