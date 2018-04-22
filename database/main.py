@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 PASSWD = "D3f@ultP"
-=======
-PASSWD = ""
->>>>>>> 3132ff3dafd6867609fe41bf30dcf17fc6333a02
 
 #!/usr/bin/python
 
