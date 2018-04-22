@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS Customer
 	customer_id 	int AUTO_INCREMENT not null, 
 	email		varchar(50) not null,
 	password	varchar(50) not null,	-- We will eventually hash this
-	PRIMARY KEY (customer_id)
+    PRIMARY KEY (customer_id)
    );
 
 /*

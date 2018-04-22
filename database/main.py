@@ -1,5 +1,5 @@
 HOST = "localhost"
-USER = ""
+USER = "root"
 PASSWD = ""
 
 #!/usr/bin/python
