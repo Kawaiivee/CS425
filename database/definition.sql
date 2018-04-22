@@ -106,11 +106,11 @@ CREATE TABLE IF NOT EXISTS Employee
    (  
 	email		varchar(50),
 	employee_type 	varchar(20),
-	employee_id	int NOT NULL,
+	employee_id	int AUTO_INCREMENT not null,
 
 region		varchar(50) NOT NULL,
 
-	employee_name	int,
+	employee_name	varchar(50) NOT NULL,
 	primary key (employee_id)
    );   
 

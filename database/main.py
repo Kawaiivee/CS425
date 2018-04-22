@@ -1,8 +1,6 @@
-PASSWD = ""
+PASSWD = "eeviiawaK87"
 
 #!/usr/bin/python
-cartList = [
-]
 
 categoryList = [
 ["chocolate milk dark white", "chocolates", "100"],
@@ -46,20 +44,23 @@ employeeList = [
 ["Benjamin@mail.com", "packer", "Benjamin"],
 ["Emily@mail.com", "packer", "Emily"],
 
-["Pylch@mail.com", "warehousemanager", "Pylch"],
-["Jackson@mail.com", "warehousemanager", ""],
+["Trump@mail.com", "warehousemanager", "Trump"],
+["Trujillo@mail.com", "warehousemanager", "Trujillo"],
 ["Hector@mail.com", "warehousemanager", "Hector"],
-["Jackson@mail.com", "warehousemanager", "Jackson"],
-["Jackson@mail.com", "warehousemanager", "Jackson"],
-["Jackson@mail.com", "warehousemanager", "Jackson"],
-["Jackson@mail.com", "warehousemanager", "Jackson"],
-
-
+["Mandela@mail.com", "warehousemanager", "Mandela"],
+["Messi@mail.com", "warehousemanager", "Messi"],
+["Irwin@mail.com", "warehousemanager", "Irwin"],
+["Nick@mail.com", "warehousemanager", "Nick"]
 ]
 
-employeeAddressBookList = [
-[],
-[]
+warehouseList = [
+["warehouseAddr1"],
+["warehouseAddr2"],
+["warehouseAddr3"],
+["warehouseAddr4"],
+["warehouseAddr5"],
+["warehouseAddr6"],
+["warehouseAddr7"],
 ]
 
 inventoryList = [
@@ -93,6 +94,7 @@ productList = [
 ["cpu", "cpu.png", "20.00", "Cpu", "100", "0", "5", "EMPTY"],
 ]
 
+
 regionList = [
 ["1", "North America", "NA"],
 ["2", "South America", "SA"],
@@ -110,11 +112,6 @@ supplierList = [
 ["suppAddr4", "supp4@mail.com", "4567890", "Papermate"],
 ["suppAddr5", "supp5@mail.com", "5678901", "Hasbro"],
 ["suppAddr6", "supp6@mail.com", "6789012", "Intel"],
-]
-
-warehouseList = [
-[],
-[]
 ]
 
 import MySQLdb
@@ -203,7 +200,7 @@ for row in regionList:
 	
 	cursor.execute('''INSERT into Region (region_id, region_name, description) values (%s, %s, %s)''', (region_id, region_name, description))
 	db.commit()
-	region.append(x)
+	region.append(description)
 	print(x)
 	x += 1
 	
@@ -242,43 +239,44 @@ x = 1
 for row in employeeList:
 	email = row[0]
 	employee_type = row[1]
+	if x == 7:
+		x = 0
+	r = region[x-1]
 	employee_id = x
 	employee_name = row[2]
 
-	cursor.execute('''INSERT into Employee (email, employee_type, region employee_id, employee_name) values (%s, %s, region.description, %s, %s)''', (email, employee_type, employee_id, employee_name))
+	cursor.execute('''INSERT into Employee (email, employee_type, region, employee_name) values (%s, %s, %s, %s)''', (email, employee_type, r, employee_name))
 	db.commit()
 	
 	currentemployee.append(x)
 	print(x)
 	x += 1
 
-print("INSERT into EMPLOYEE")
-currentemployee = []
+print("INSERT into EMPLOYEEADDRESSBOOK")
+currentemployeeaddressbook = []
 x = 1
-for row in employeeAddressBookList:
-	print('INSERT into EMPLOYEEADDRESSBOOK')
-	address = row[0]
-	customer_name = row[1]
-	password = row[2]
-	email = row[3]
+for row in employeeList:
 	
-	cursor.execute('''INSERT into Customer (address, customer_name, email, password) values (%s, %s, %s, %s)''', (address, customer_name, email, password))
+	cursor.execute('''INSERT into EmployeeAddressBook (employee_id, address) values (%s, %s)''', (x, address))
 	db.commit()
 
-print("INSERT into EMPLOYEE")
-currentemployee = []
+	currentemployeeaddressbook.append(x)
+	print(x)
+	x += 1
+
+print("INSERT into WAREHOUSE")
+currentwarehouse = []
 x = 1	
-for row in inventoryList:
-	print('INSERT into INVENTORY')
+for row in warehouseList:
+	r = region[x]
+	warehouse_id = x
 	address = row[0]
-	customer_name = row[1]
-	password = row[2]
-	email = row[3]
 	
-	cursor.execute('''INSERT into Customer (address, customer_name, email, password) values (%s, %s, %s, %s)''', (address, customer_name, email, password))
+	
+	cursor.execute('''INSERT into Warehouse (region, warehouse_id, address, manager_id) values (%s, %s, %s, %s)''', (r, x, address, x+14))
 	db.commit()
 
-print("INSERT into EMPLOYEE")
+print("INSERT into INVENTORY")
 currentemployee = []
 x = 1	
 for row in invoiceList:
@@ -294,8 +292,8 @@ for row in invoiceList:
 print("INSERT into EMPLOYEE")
 currentemployee = []
 x = 1
-for row in warehouseList:
-	print('INSERT into WAREHOUSE')
+for row in regionList:
+	print('INSERT into INVOICE')
 	address = row[0]
 	customer_name = row[1]
 	password = row[2]
