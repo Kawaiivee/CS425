@@ -28,29 +28,29 @@ employeeList = [
 #One Warehouse Manager Per Region
 #One Packer Per Region
 #21 Total
-["Ramir@mail.com", "shipper", "Ramir"],
-["Sophia@mail.com", "shipper", "Sophia"],
-["Aiden@mail.com", "shipper", "Aiden"],
-["Emma@mail.com", "shipper", "Emma"],
-["Lucas@mail.com", "shipper", "Lucas"],
-["Olivia@mail.com", "shipper", "Olivia"],
-["Liam@mail.com", "shipper", "Liam"],
+["Ramir@mail.com", "shipper", "Ramir", "ramirAddr"],
+["Sophia@mail.com", "shipper", "Sophia", "sophiaAddr"],
+["Aiden@mail.com", "shipper", "Aiden", "aidenAddr"],
+["Emma@mail.com", "shipper", "Emma", "emmaAddr"],
+["Lucas@mail.com", "shipper", "Lucas", "lucasAddr"],
+["Olivia@mail.com", "shipper", "Olivia", "oliviaAddr"],
+["Liam@mail.com", "shipper", "Liam", "liamAddr"],
 
-["Rafael@mail.com", "packer", "Rafael"],
-["Mia@mail.com", "packer", "Mia"],
-["Noah@mail.com", "packer", "Noah"],
-["Riley@mail.com", "packer", "Riley"],
-["Mason@mail.com", "packer", "Mason"],
-["Benjamin@mail.com", "packer", "Benjamin"],
-["Emily@mail.com", "packer", "Emily"],
+["Rafael@mail.com", "packer", "Rafael", "rafaelAddr"],
+["Mia@mail.com", "packer", "Mia", "miaAddr"],
+["Noah@mail.com", "packer", "Noah", "noahAddr"],
+["Riley@mail.com", "packer", "Riley", "rileyAddr"],
+["Mason@mail.com", "packer", "Mason", "masonAddr"],
+["Benjamin@mail.com", "packer", "Benjamin", "benjaminAddr"],
+["Emily@mail.com", "packer", "Emily", "emilyAddr"],
 
-["Trump@mail.com", "warehousemanager", "Trump"],
-["Trujillo@mail.com", "warehousemanager", "Trujillo"],
-["Hector@mail.com", "warehousemanager", "Hector"],
-["Mandela@mail.com", "warehousemanager", "Mandela"],
-["Messi@mail.com", "warehousemanager", "Messi"],
-["Irwin@mail.com", "warehousemanager", "Irwin"],
-["Nick@mail.com", "warehousemanager", "Nick"]
+["Trump@mail.com", "warehousemanager", "Trump", "trumpAddr"],
+["Trujillo@mail.com", "warehousemanager", "Trujillo", "trujilloAddr"],
+["Hector@mail.com", "warehousemanager", "Hector", "hectorAddr"],
+["Mandela@mail.com", "warehousemanager", "Mandela", "mandelaAddr"],
+["Messi@mail.com", "warehousemanager", "Messi", "messiAddr"],
+["Irwin@mail.com", "warehousemanager", "Irwin", "irwinAddr"],
+["Nick@mail.com", "warehousemanager", "Nick", "nickAddr"]
 ]
 
 warehouseList = [
@@ -61,11 +61,6 @@ warehouseList = [
 ["warehouseAddr5"],
 ["warehouseAddr6"],
 ["warehouseAddr7"],
-]
-
-inventoryList = [
-[],
-[]
 ]
 
 invoiceList = [
@@ -94,6 +89,21 @@ productList = [
 ["cpu", "cpu.png", "20.00", "Cpu", "100", "0", "5", "EMPTY"],
 ]
 
+#One inventory per PRODUCT - cost and quantity -> these should be derived, hardcoded for now
+inventoryList = [
+["250.00", "100"],
+["250.00", "100"],
+["250.00", "100"],
+["250.00", "100"],
+["250.00", "100"],
+["250.00", "100"],
+["250.00", "100"],
+["250.00", "100"],
+["250.00", "100"],
+["250.00", "100"],
+["250.00", "100"],
+["250.00", "100"]
+]
 
 regionList = [
 ["1", "North America", "NA"],
@@ -113,6 +123,12 @@ supplierList = [
 ["suppAddr5", "supp5@mail.com", "5678901", "Hasbro"],
 ["suppAddr6", "supp6@mail.com", "6789012", "Intel"],
 ]
+
+
+#DATA ABOVE THIS LINE (also initialize password for database connect
+#------------------------------------------------------
+#INSERTING DATA INTO database object db with cursor
+
 
 import MySQLdb
 from sqlScriptReader import *
@@ -256,7 +272,7 @@ print("INSERT into EMPLOYEEADDRESSBOOK")
 currentemployeeaddressbook = []
 x = 1
 for row in employeeList:
-	
+	address = row[3]
 	cursor.execute('''INSERT into EmployeeAddressBook (employee_id, address) values (%s, %s)''', (x, address))
 	db.commit()
 
@@ -268,39 +284,41 @@ print("INSERT into WAREHOUSE")
 currentwarehouse = []
 x = 1	
 for row in warehouseList:
-	r = region[x]
+	r = region[x-1]
 	warehouse_id = x
 	address = row[0]
 	
-	
 	cursor.execute('''INSERT into Warehouse (region, warehouse_id, address, manager_id) values (%s, %s, %s, %s)''', (r, x, address, x+14))
 	db.commit()
-
+	currentwarehouse.append(x)
+	print(x)
+	x += 1
+	
 print("INSERT into INVENTORY")
-currentemployee = []
+currentinventory = []
 x = 1	
-for row in invoiceList:
-	print('INSERT into INVOICELIST')
-	address = row[0]
-	customer_name = row[1]
-	password = row[2]
-	email = row[3]
+for row in inventoryList:
+	cost = row[0]
+	quantity = row[1]
+	_ids = str(x)
 	
-	cursor.execute('''INSERT into Customer (address, customer_name, email, password) values (%s, %s, %s, %s)''', (address, customer_name, email, password))
+	cursor.execute('''INSERT into Inventory (cost, quantity) values (%s, %s)''', (cost, quantity))
 	db.commit()
-
-print("INSERT into EMPLOYEE")
-currentemployee = []
+	currentinventory.append(x)
+	print(x)
+	x += 1
+	
+print("INSERT into INVOICE")
+currentinvoice = []
 x = 1
-for row in regionList:
-	print('INSERT into INVOICE')
-	address = row[0]
-	customer_name = row[1]
-	password = row[2]
-	email = row[3]
+for row in invoiceList:
+	invoice_line = str(x)
 	
-	cursor.execute('''INSERT into Customer (address, customer_name, email, password) values (%s, %s, %s, %s)''', (address, customer_name, email, password))
+	cursor.execute('''INSERT into Invoice (invoice_line, amount, quantity) values (%s, %s, %s)''', (invoice_line, "0", "0"))
 	db.commit()
+	currentinvoice.append(x)
+	print(x)
+	x += 1
 # disconnect from server
 db.close()
 
