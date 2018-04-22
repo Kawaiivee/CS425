@@ -1,4 +1,4 @@
-PASSWD = "eeviiawaK87"
+PASSWD = ""
 
 #!/usr/bin/python
 cartList = [
@@ -29,8 +29,32 @@ employeeList = [
 #One Shipper Per Region
 #One Warehouse Manager Per Region
 #One Packer Per Region
-[],
-[],
+#21 Total
+["Ramir@mail.com", "shipper", "Ramir"],
+["Sophia@mail.com", "shipper", "Sophia"],
+["Aiden@mail.com", "shipper", "Aiden"],
+["Emma@mail.com", "shipper", "Emma"],
+["Lucas@mail.com", "shipper", "Lucas"],
+["Olivia@mail.com", "shipper", "Olivia"],
+["Liam@mail.com", "shipper", "Liam"],
+
+["Rafael@mail.com", "packer", "Rafael"],
+["Mia@mail.com", "packer", "Mia"],
+["Noah@mail.com", "packer", "Noah"],
+["Riley@mail.com", "packer", "Riley"],
+["Mason@mail.com", "packer", "Mason"],
+["Benjamin@mail.com", "packer", "Benjamin"],
+["Emily@mail.com", "packer", "Emily"],
+
+["Pylch@mail.com", "warehousemanager", "Pylch"],
+["Jackson@mail.com", "warehousemanager", ""],
+["Hector@mail.com", "warehousemanager", "Hector"],
+["Jackson@mail.com", "warehousemanager", "Jackson"],
+["Jackson@mail.com", "warehousemanager", "Jackson"],
+["Jackson@mail.com", "warehousemanager", "Jackson"],
+["Jackson@mail.com", "warehousemanager", "Jackson"],
+
+
 ]
 
 employeeAddressBookList = [
@@ -218,10 +242,10 @@ x = 1
 for row in employeeList:
 	email = row[0]
 	employee_type = row[1]
-	employee_id = row[2]
-	employee_name = row[3]
+	employee_id = x
+	employee_name = row[2]
 
-	cursor.execute('''INSERT into Employee () values ()''', (address, customer_name, email, password))
+	cursor.execute('''INSERT into Employee (email, employee_type, region employee_id, employee_name) values (%s, %s, region.description, %s, %s)''', (email, employee_type, employee_id, employee_name))
 	db.commit()
 	
 	currentemployee.append(x)
