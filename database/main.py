@@ -1,4 +1,4 @@
-MYPASSWD = "eeviiawaK87"
+PASSWD = "eeviiawaK87"
 
 #!/usr/bin/python
 cartList = [
@@ -24,15 +24,13 @@ customerList = [
 ["addrLine8", "Hubert", "password8", "Hubert@mail.com"],
 ["addrLine9", "Isabella", "password9", "Isabella@mail.com"]
 ]
-
-customerAddressBookList = [
-[],
-[]
-]
-
+  
 employeeList = [
+#One Shipper Per Region
+#One Warehouse Manager Per Region
+#One Packer Per Region
 [],
-[]
+[],
 ]
 
 employeeAddressBookList = [
@@ -82,8 +80,12 @@ regionList = [
 ]
 
 supplierList = [
-[],
-[]
+["suppAddr1", "supp1@mail.com", "1234567", "Hershey Chocolate"],
+["suppAddr2", "supp2@mail.com", "2345678", "Jansport"],
+["suppAddr3", "supp3@mail.com", "3456789", "Ticonderoga"],
+["suppAddr4", "supp4@mail.com", "4567890", "Papermate"],
+["suppAddr5", "supp5@mail.com", "5678901", "Hasbro"],
+["suppAddr6", "supp6@mail.com", "6789012", "Intel"],
 ]
 
 warehouseList = [
@@ -92,13 +94,16 @@ warehouseList = [
 ]
 
 import MySQLdb
-
+from sqlScriptReader import *
 # Open database connection
-db = MySQLdb.connect(host="localhost",user="root",passwd=MYPASSWD,db="ecommerce" )
+db = MySQLdb.connect(host="localhost",user="root",passwd=PASSWD,db="ecommerce")
 
 print("Connected to database:")
 #database cursor object intialized
 cursor = db.cursor()
+
+#Drop all tables and recreate entire database
+#executeScriptsFromFile(cursor, 'definition.sql')
 
 #SQL query to INSERT a record into the Table
 #THANK GOD FOR THE AUTOINCREMENT STATEMENT IN SQL FOR THE ID
@@ -184,23 +189,48 @@ currentcart = []
 x = 1
 for row in customerList:
 	customer_id = str(x)
-	cursor.execute('''INSERT into Cart (customer_id, product_id, quantity) values (%s, 0, 0)''', (x))
+	cursor.execute('''INSERT into Cart (customer_id, product_id, quantity) values (%s, product_id, 0)''', (customer_id))
 	db.commit()
 	
 	currentcart.append(x)
 	print(x)
 	x += 1
-	
-for row in employeeList:
-	print('INSERT into EMPLOYEE')
+
+print('INSERT into SUPPLIER')
+currentsupplier = []
+x = 1
+for row in supplierList:
 	address = row[0]
-	customer_name = row[1]
-	password = row[2]
-	email = row[3]
+	email = row[1]
+	phone = row[2]
+	supplier_name = row[3]
 	
-	cursor.execute('''INSERT into Customer (address, customer_name, email, password) values (%s, %s, %s, %s)''', (address, customer_name, email, password))
+	cursor.execute('''INSERT into Supplier (address, email, phone, supplier_name) values (%s, %s, %s, %s)''', (address, email, phone, supplier_name))
 	db.commit()
 	
+	currentsupplier.append(x)
+	print(x)
+	x += 1
+
+print("INSERT into EMPLOYEE")
+currentemployee = []
+x = 1
+for row in employeeList:
+	email = row[0]
+	employee_type = row[1]
+	employee_id = row[2]
+	employee_name = row[3]
+
+	cursor.execute('''INSERT into Employee () values ()''', (address, customer_name, email, password))
+	db.commit()
+	
+	currentemployee.append(x)
+	print(x)
+	x += 1
+
+print("INSERT into EMPLOYEE")
+currentemployee = []
+x = 1
 for row in employeeAddressBookList:
 	print('INSERT into EMPLOYEEADDRESSBOOK')
 	address = row[0]
@@ -210,7 +240,10 @@ for row in employeeAddressBookList:
 	
 	cursor.execute('''INSERT into Customer (address, customer_name, email, password) values (%s, %s, %s, %s)''', (address, customer_name, email, password))
 	db.commit()
-	
+
+print("INSERT into EMPLOYEE")
+currentemployee = []
+x = 1	
 for row in inventoryList:
 	print('INSERT into INVENTORY')
 	address = row[0]
@@ -220,7 +253,10 @@ for row in inventoryList:
 	
 	cursor.execute('''INSERT into Customer (address, customer_name, email, password) values (%s, %s, %s, %s)''', (address, customer_name, email, password))
 	db.commit()
-	
+
+print("INSERT into EMPLOYEE")
+currentemployee = []
+x = 1	
 for row in invoiceList:
 	print('INSERT into INVOICELIST')
 	address = row[0]
@@ -230,17 +266,10 @@ for row in invoiceList:
 	
 	cursor.execute('''INSERT into Customer (address, customer_name, email, password) values (%s, %s, %s, %s)''', (address, customer_name, email, password))
 	db.commit()
-	
-for row in supplierList:
-	print('INSERT into SUPPLIER')
-	address = row[0]
-	customer_name = row[1]
-	password = row[2]
-	email = row[3]
-	
-	cursor.execute('''INSERT into Customer (address, customer_name, email, password) values (%s, %s, %s, %s)''', (address, customer_name, email, password))
-	db.commit()
 
+print("INSERT into EMPLOYEE")
+currentemployee = []
+x = 1
 for row in warehouseList:
 	print('INSERT into WAREHOUSE')
 	address = row[0]
@@ -252,6 +281,5 @@ for row in warehouseList:
 	db.commit()
 # disconnect from server
 db.close()
-
 
 
