@@ -1,8 +1,10 @@
+<<<<<<< HEAD
 PASSWD = "D3f@ultP"
+=======
+PASSWD = ""
+>>>>>>> 3132ff3dafd6867609fe41bf30dcf17fc6333a02
 
 #!/usr/bin/python
-cartList = [
-]
 
 categoryList = [
 ["chocolate milk dark white", "chocolates", "100"],
@@ -29,18 +31,40 @@ employeeList = [
 #One Shipper Per Region
 #One Warehouse Manager Per Region
 #One Packer Per Region
-[],
-[],
+#21 Total
+["Ramir@mail.com", "shipper", "Ramir", "ramirAddr"],
+["Sophia@mail.com", "shipper", "Sophia", "sophiaAddr"],
+["Aiden@mail.com", "shipper", "Aiden", "aidenAddr"],
+["Emma@mail.com", "shipper", "Emma", "emmaAddr"],
+["Lucas@mail.com", "shipper", "Lucas", "lucasAddr"],
+["Olivia@mail.com", "shipper", "Olivia", "oliviaAddr"],
+["Liam@mail.com", "shipper", "Liam", "liamAddr"],
+
+["Rafael@mail.com", "packer", "Rafael", "rafaelAddr"],
+["Mia@mail.com", "packer", "Mia", "miaAddr"],
+["Noah@mail.com", "packer", "Noah", "noahAddr"],
+["Riley@mail.com", "packer", "Riley", "rileyAddr"],
+["Mason@mail.com", "packer", "Mason", "masonAddr"],
+["Benjamin@mail.com", "packer", "Benjamin", "benjaminAddr"],
+["Emily@mail.com", "packer", "Emily", "emilyAddr"],
+
+["Trump@mail.com", "warehousemanager", "Trump", "trumpAddr"],
+["Trujillo@mail.com", "warehousemanager", "Trujillo", "trujilloAddr"],
+["Hector@mail.com", "warehousemanager", "Hector", "hectorAddr"],
+["Mandela@mail.com", "warehousemanager", "Mandela", "mandelaAddr"],
+["Messi@mail.com", "warehousemanager", "Messi", "messiAddr"],
+["Irwin@mail.com", "warehousemanager", "Irwin", "irwinAddr"],
+["Nick@mail.com", "warehousemanager", "Nick", "nickAddr"]
 ]
 
-employeeAddressBookList = [
-[],
-[]
-]
-
-inventoryList = [
-[],
-[]
+warehouseList = [
+["warehouseAddr1"],
+["warehouseAddr2"],
+["warehouseAddr3"],
+["warehouseAddr4"],
+["warehouseAddr5"],
+["warehouseAddr6"],
+["warehouseAddr7"],
 ]
 
 invoiceList = [
@@ -69,6 +93,22 @@ productList = [
 ["cpu", "cpu.png", "20.00", "Cpu", "100", "0", "5", "EMPTY"],
 ]
 
+#One inventory per PRODUCT - cost and quantity -> these should be derived, hardcoded for now
+inventoryList = [
+["250.00", "100"],
+["250.00", "100"],
+["250.00", "100"],
+["250.00", "100"],
+["250.00", "100"],
+["250.00", "100"],
+["250.00", "100"],
+["250.00", "100"],
+["250.00", "100"],
+["250.00", "100"],
+["250.00", "100"],
+["250.00", "100"]
+]
+
 regionList = [
 ["1", "North America", "NA"],
 ["2", "South America", "SA"],
@@ -88,10 +128,11 @@ supplierList = [
 ["suppAddr6", "supp6@mail.com", "6789012", "Intel"],
 ]
 
-warehouseList = [
-[],
-[]
-]
+
+#DATA ABOVE THIS LINE (also initialize password for database connect
+#------------------------------------------------------
+#INSERTING DATA INTO database object db with cursor
+
 
 import MySQLdb
 from sqlScriptReader import *
@@ -179,7 +220,7 @@ for row in regionList:
 	
 	cursor.execute('''INSERT into Region (region_id, region_name, description) values (%s, %s, %s)''', (region_id, region_name, description))
 	db.commit()
-	region.append(x)
+	region.append(description)
 	print(x)
 	x += 1
 	
@@ -218,67 +259,70 @@ x = 1
 for row in employeeList:
 	email = row[0]
 	employee_type = row[1]
-	employee_id = row[2]
-	employee_name = row[3]
+	if x == 7:
+		x = 0
+	r = region[x-1]
+	employee_id = x
+	employee_name = row[2]
 
-	cursor.execute('''INSERT into Employee () values ()''', (address, customer_name, email, password))
+	cursor.execute('''INSERT into Employee (email, employee_type, region, employee_name) values (%s, %s, %s, %s)''', (email, employee_type, r, employee_name))
 	db.commit()
 	
 	currentemployee.append(x)
 	print(x)
 	x += 1
 
-print("INSERT into EMPLOYEE")
-currentemployee = []
+print("INSERT into EMPLOYEEADDRESSBOOK")
+currentemployeeaddressbook = []
 x = 1
-for row in employeeAddressBookList:
-	print('INSERT into EMPLOYEEADDRESSBOOK')
-	address = row[0]
-	customer_name = row[1]
-	password = row[2]
-	email = row[3]
-	
-	cursor.execute('''INSERT into Customer (address, customer_name, email, password) values (%s, %s, %s, %s)''', (address, customer_name, email, password))
+for row in employeeList:
+	address = row[3]
+	cursor.execute('''INSERT into EmployeeAddressBook (employee_id, address) values (%s, %s)''', (x, address))
 	db.commit()
 
-print("INSERT into EMPLOYEE")
-currentemployee = []
+	currentemployeeaddressbook.append(x)
+	print(x)
+	x += 1
+
+print("INSERT into WAREHOUSE")
+currentwarehouse = []
+x = 1	
+for row in warehouseList:
+	r = region[x-1]
+	warehouse_id = x
+	address = row[0]
+	
+	cursor.execute('''INSERT into Warehouse (region, warehouse_id, address, manager_id) values (%s, %s, %s, %s)''', (r, x, address, x+14))
+	db.commit()
+	currentwarehouse.append(x)
+	print(x)
+	x += 1
+	
+print("INSERT into INVENTORY")
+currentinventory = []
 x = 1	
 for row in inventoryList:
-	print('INSERT into INVENTORY')
-	address = row[0]
-	customer_name = row[1]
-	password = row[2]
-	email = row[3]
+	cost = row[0]
+	quantity = row[1]
+	_ids = str(x)
 	
-	cursor.execute('''INSERT into Customer (address, customer_name, email, password) values (%s, %s, %s, %s)''', (address, customer_name, email, password))
+	cursor.execute('''INSERT into Inventory (cost, quantity) values (%s, %s)''', (cost, quantity))
 	db.commit()
-
-print("INSERT into EMPLOYEE")
-currentemployee = []
-x = 1	
-for row in invoiceList:
-	print('INSERT into INVOICELIST')
-	address = row[0]
-	customer_name = row[1]
-	password = row[2]
-	email = row[3]
+	currentinventory.append(x)
+	print(x)
+	x += 1
 	
-	cursor.execute('''INSERT into Customer (address, customer_name, email, password) values (%s, %s, %s, %s)''', (address, customer_name, email, password))
-	db.commit()
-
-print("INSERT into EMPLOYEE")
-currentemployee = []
+print("INSERT into INVOICE")
+currentinvoice = []
 x = 1
-for row in warehouseList:
-	print('INSERT into WAREHOUSE')
-	address = row[0]
-	customer_name = row[1]
-	password = row[2]
-	email = row[3]
+for row in invoiceList:
+	invoice_line = str(x)
 	
-	cursor.execute('''INSERT into Customer (address, customer_name, email, password) values (%s, %s, %s, %s)''', (address, customer_name, email, password))
+	cursor.execute('''INSERT into Invoice (invoice_line, amount, quantity) values (%s, %s, %s)''', (invoice_line, "0", "0"))
 	db.commit()
+	currentinvoice.append(x)
+	print(x)
+	x += 1
 # disconnect from server
 db.close()
 
