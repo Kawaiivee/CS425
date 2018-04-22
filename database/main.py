@@ -1,4 +1,4 @@
-PASSWD = "eeviiawaK87"
+PASSWD = ""
 
 #!/usr/bin/python
 
