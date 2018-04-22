@@ -77,8 +77,8 @@ Creating Cart
 DROP TABLE IF EXISTS Cart;
 CREATE TABLE IF NOT EXISTS Cart
        (
-	customer_id	int  ,
-	product_id	int not null,
+	customer_id	int,
+	product_id	int,
 	quantity	int not null,
 	FOREIGN KEY(customer_id) REFERENCES Customer(customer_id),
 	FOREIGN KEY(product_id) REFERENCES Product(product_id)
