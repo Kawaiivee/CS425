@@ -1,5 +1,6 @@
-PASSWD = "D3f@ultP"
-
+HOST = "localhost"
+USER = ""
+PASSWD = ""
 
 #!/usr/bin/python
 
@@ -132,7 +133,7 @@ supplierList = [
 import MySQLdb
 from sqlScriptReader import *
 # Open database connection
-db = MySQLdb.connect(host="localhost",user="ramir",passwd=PASSWD,db="ecommerce")
+db = MySQLdb.connect(host=HOST,user=USER,passwd=PASSWD,db="ecommerce")
 
 print("Connected to database:")
 #database cursor object intialized
