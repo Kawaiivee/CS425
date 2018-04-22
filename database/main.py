@@ -1,4 +1,4 @@
-PASSWD = "eeviiawaK87"
+PASSWD = "D3f@ultP"
 
 #!/usr/bin/python
 cartList = [
@@ -96,7 +96,7 @@ warehouseList = [
 import MySQLdb
 from sqlScriptReader import *
 # Open database connection
-db = MySQLdb.connect(host="localhost",user="root",passwd=PASSWD,db="ecommerce")
+db = MySQLdb.connect(host="localhost",user="ramir",passwd=PASSWD,db="ecommerce")
 
 print("Connected to database:")
 #database cursor object intialized
