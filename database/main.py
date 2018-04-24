@@ -254,6 +254,7 @@ currentemployee = []
 x = 1
 for row in employeeList:
 	email = row[0]
+	password = "default"
 	employee_type = row[1]
 	if x == 7:
 		x = 0
@@ -261,7 +262,7 @@ for row in employeeList:
 	employee_id = x
 	employee_name = row[2]
 
-	cursor.execute('''INSERT into Employee (email, employee_type, region, employee_name) values (%s, %s, %s, %s)''', (email, employee_type, r, employee_name))
+	cursor.execute('''INSERT into Employee (email, password, employee_type, region, employee_name) values (%s, %s, %s, %s, %s)''', (email, password, employee_type, r, employee_name))
 	db.commit()
 	
 	currentemployee.append(x)

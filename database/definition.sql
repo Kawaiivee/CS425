@@ -105,6 +105,7 @@ DROP TABLE IF EXISTS Employee;
 CREATE TABLE IF NOT EXISTS Employee	
    (  
 	email		varchar(50),
+	password	varchar(50) not null,
 	employee_type 	varchar(20),
 	employee_id	int AUTO_INCREMENT not null,
 
