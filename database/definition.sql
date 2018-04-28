@@ -176,4 +176,4 @@ CREATE TABLE IF NOT EXISTS Invoice
 	FOREIGN KEY (product_id) REFERENCES Product(product_id),
 	primary key (invoice_no)
 	
-   );Cart
+   );
