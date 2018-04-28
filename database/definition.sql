@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS Customer
 	customer_id 	int AUTO_INCREMENT not null, 
 	email		varchar(50) not null,
 	password	varchar(50) not null,	-- We will eventually hash this
-	PRIMARY KEY (customer_id)
+    PRIMARY KEY (customer_id)
    );
 
 /*
@@ -94,6 +94,7 @@ CREATE TABLE IF NOT EXISTS Supplier
 	phone		varchar(20),
 	supplier_id 	int AUTO_INCREMENT,
 	supplier_name	varchar(50) NOT NULL,
+	password	varchar(50) not null,	-- We will eventually hash this
 	primary key (supplier_id)
 	
    );
@@ -105,6 +106,7 @@ DROP TABLE IF EXISTS Employee;
 CREATE TABLE IF NOT EXISTS Employee	
    (  
 	email		varchar(50),
+	password	varchar(50) not null,
 	employee_type 	varchar(20),
 	employee_id	int AUTO_INCREMENT not null,
 

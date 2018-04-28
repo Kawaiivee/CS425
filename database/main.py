@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-PASSWD = "D3f@ultP"
-=======
+HOST = "localhost"
+USER = "root"
 PASSWD = ""
->>>>>>> 3132ff3dafd6867609fe41bf30dcf17fc6333a02
 
 #!/usr/bin/python
 
@@ -68,8 +66,6 @@ warehouseList = [
 ]
 
 invoiceList = [
-[],
-[]
 ]
 
 productList = [
@@ -137,7 +133,7 @@ supplierList = [
 import MySQLdb
 from sqlScriptReader import *
 # Open database connection
-db = MySQLdb.connect(host="localhost",user="ramir",passwd=PASSWD,db="ecommerce")
+db = MySQLdb.connect(host=HOST,user=USER,passwd=PASSWD,db="ecommerce")
 
 print("Connected to database:")
 #database cursor object intialized
@@ -258,6 +254,7 @@ currentemployee = []
 x = 1
 for row in employeeList:
 	email = row[0]
+	password = "default"
 	employee_type = row[1]
 	if x == 7:
 		x = 0
@@ -265,7 +262,7 @@ for row in employeeList:
 	employee_id = x
 	employee_name = row[2]
 
-	cursor.execute('''INSERT into Employee (email, employee_type, region, employee_name) values (%s, %s, %s, %s)''', (email, employee_type, r, employee_name))
+	cursor.execute('''INSERT into Employee (email, password, employee_type, region, employee_name) values (%s, %s, %s, %s, %s)''', (email, password, employee_type, r, employee_name))
 	db.commit()
 	
 	currentemployee.append(x)
