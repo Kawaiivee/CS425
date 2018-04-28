@@ -1,5 +1,5 @@
 DROP DATABASE IF EXISTS ecommerce;
-CREATE DATABASE IF NOT EXISTS  ecommerce;
+CREATE DATABASE IF NOT EXISTS ecommerce;
 USE ecommerce;
 
 /*
@@ -94,7 +94,6 @@ CREATE TABLE IF NOT EXISTS Supplier
 	phone		varchar(20),
 	supplier_id 	int AUTO_INCREMENT,
 	supplier_name	varchar(50) NOT NULL,
-	password	varchar(50) not null,	-- We will eventually hash this
 	primary key (supplier_id)
 	
    );
@@ -177,5 +176,4 @@ CREATE TABLE IF NOT EXISTS Invoice
 	FOREIGN KEY (product_id) REFERENCES Product(product_id),
 	primary key (invoice_no)
 	
-   );
-   
+   );Cart
