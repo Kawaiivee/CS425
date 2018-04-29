@@ -1,8 +1,44 @@
-HOST = "localhost"
-USER = "root"
-PASSWD = ""
-
 #!/usr/bin/python
+import MySQLdb
+from sqlScriptReader import *
+# Open database connection
+
+
+
+#database cursor object intialized
+cursor = db.cursor()
+class Connetion(object):
+    countCustomers=0
+    def __init__(self, HOST="localhost", USER="root", PASSWD = ""):
+	    self.HOST = HOST 
+	    self.USER = USER 
+	    self.PASSWD = PASSWD 
+        self.db = MySQLdb.connect( host=HOST,user=USER,passwd=PASSWD,db="ecommerce")
+        self.cursor=self.db.cursor()
+        print("Connected to database:" self.db)
+	def getCursor(self):
+		return self.cursor
+
+	def insertCustomer(
+                        ):
+        self.cursor.execute(
+            '''INSERT into Customer (address, customer_name, email, password) values (%s, %s, %s, %s)''',
+             (address, customer_name, email, password)
+             )
+        countCustomers+=1
+		print("Inserter Customer [%s, %s, %s, %s]",(address, customer_name, email, password))
+
+	def accelarate(self):
+		print("accelarating...")
+		"accelarator functionality here"
+
+	def change_gear(self, gear_type):
+		print("gear changed")
+		" gear related functionality here"
+
+
+
+
 
 categoryList = [
 ["chocolate milk dark white", "chocolates", "100"],
@@ -24,7 +60,7 @@ customerList = [
 ["addrLine8", "Hubert", "password8", "Hubert@mail.com"],
 ["addrLine9", "Isabella", "password9", "Isabella@mail.com"]
 ]
-  
+
 employeeList = [
 #One Shipper Per Region
 #One Warehouse Manager Per Region
@@ -130,20 +166,15 @@ supplierList = [
 #INSERTING DATA INTO database object db with cursor
 
 
-import MySQLdb
-from sqlScriptReader import *
-# Open database connection
-db = MySQLdb.connect(host=HOST,user=USER,passwd=PASSWD,db="ecommerce")
 
-print("Connected to database:")
-#database cursor object intialized
-cursor = db.cursor()
 
 #Drop all tables and recreate entire database
 #executeScriptsFromFile(cursor, 'definition.sql')
 
 #SQL query to INSERT a record into the Table
 #THANK GOD FOR THE AUTOINCREMENT STATEMENT IN SQL FOR THE ID
+db=New Connetion()
+cursor=db.getCursor()
 print('INSERT into CUSTOMER')
 currentcustomer = []
 x = 1
@@ -152,13 +183,13 @@ for row in customerList:
 	customer_name = row[1]
 	password = row[2]
 	email = row[3]
-	
+
 	cursor.execute('''INSERT into Customer (address, customer_name, email, password) values (%s, %s, %s, %s)''', (address, customer_name, email, password))
 	db.commit()
 	print(x)
 	currentcustomer.append(x)
 	x += 1
-	
+
 print('INSERT into CUSTOMERADDRESSBOOK')
 currentcustomeraddressbook = []
 x = 1
@@ -186,7 +217,7 @@ for row in productList:
 
 	cursor.execute('''INSERT into Product (description, image_link, price, product_name, quantity, units, refill_point, status) values (%s, %s, %s, %s, %s, %s, %s, %s)''', (description, image_link, price, product_name, quantity, units, refill_point, status))
 	db.commit()
-	
+
 	currentproduct.append(x)
 	print(x)
 	x += 1
@@ -198,10 +229,10 @@ for row in categoryList:
 	attributes = row[0]
 	category = row[1]
 	counter = row[2]
-	
+
 	cursor.execute('''INSERT into Category (attributes, category, counter, product_id) values (%s, %s, %s, %s)''', (attributes, category, counter, x))
-	db.commit()	
-		
+	db.commit()
+
 	currentcategory.append(x)
 	print(x)
 	x += 1
@@ -213,13 +244,13 @@ for row in regionList:
 	region_id = row[0]
 	region_name = row[1]
 	description = row[2]
-	
+
 	cursor.execute('''INSERT into Region (region_id, region_name, description) values (%s, %s, %s)''', (region_id, region_name, description))
 	db.commit()
 	region.append(description)
 	print(x)
 	x += 1
-	
+
 print("INSERT into CART")
 # number of carts depends on number of customers
 currentcart = []
@@ -228,7 +259,7 @@ for row in customerList:
 	customer_id = str(x)
 	cursor.execute('''INSERT into Cart (customer_id, product_id, quantity) values (%s, product_id, 0)''', (customer_id))
 	db.commit()
-	
+
 	currentcart.append(x)
 	print(x)
 	x += 1
@@ -241,10 +272,10 @@ for row in supplierList:
 	email = row[1]
 	phone = row[2]
 	supplier_name = row[3]
-	
+
 	cursor.execute('''INSERT into Supplier (address, email, phone, supplier_name) values (%s, %s, %s, %s)''', (address, email, phone, supplier_name))
 	db.commit()
-	
+
 	currentsupplier.append(x)
 	print(x)
 	x += 1
@@ -262,9 +293,9 @@ for row in employeeList:
 	employee_id = x
 	employee_name = row[2]
 
-	cursor.execute('''INSERT into Employee (email, password, employee_type, region, employee_name) values (%s, %s, %s, %s, %s)''', (email, passord, employee_type, r, employee_name))
+	cursor.execute('''INSERT into Employee (email, password, employee_type, region, employee_name) values (%s, %s, %s, %s, %s)''', (email, password, employee_type, r, employee_name))
 	db.commit()
-	
+
 	currentemployee.append(x)
 	print(x)
 	x += 1
@@ -283,38 +314,38 @@ for row in employeeList:
 
 print("INSERT into WAREHOUSE")
 currentwarehouse = []
-x = 1	
+x = 1
 for row in warehouseList:
 	r = region[x-1]
 	warehouse_id = x
 	address = row[0]
-	
+
 	cursor.execute('''INSERT into Warehouse (region, warehouse_id, address, manager_id) values (%s, %s, %s, %s)''', (r, x, address, x+14))
 	db.commit()
 	currentwarehouse.append(x)
 	print(x)
 	x += 1
-	
+
 print("INSERT into INVENTORY")
 currentinventory = []
-x = 1	
+x = 1
 for row in inventoryList:
 	cost = row[0]
 	quantity = row[1]
 	_ids = str(x)
-	
+
 	cursor.execute('''INSERT into Inventory (cost, quantity) values (%s, %s)''', (cost, quantity))
 	db.commit()
 	currentinventory.append(x)
 	print(x)
 	x += 1
-	
+
 print("INSERT into INVOICE")
 currentinvoice = []
 x = 1
 for row in invoiceList:
 	invoice_line = str(x)
-	
+
 	cursor.execute('''INSERT into Invoice (invoice_line, amount, quantity) values (%s, %s, %s)''', (invoice_line, "0", "0"))
 	db.commit()
 	currentinvoice.append(x)

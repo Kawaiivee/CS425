@@ -1,6 +1,6 @@
 USE ecommerce;
-<<<<<<< HEAD
-CREATE OR REPLACE VIEW customerAccount AS
+
+CREATE or replace VIEW customerAccount AS
     SELECT 
         Customer.address AS address,
         Customer.customer_name AS firstname,
@@ -11,16 +11,3 @@ CREATE OR REPLACE VIEW customerAccount AS
         '0' AS stat
     FROM
         Customer
-=======
-
-DROP  VIEW `customerAccount`;
-CREATE VIEW `customerAccount` as 
-SELECT Customer.address as address,
-	Customer.customer_name as firstname,
-    Customer.customer_id as cid,
-    Customer.email as email,
-    Customer.password as passwd,
-    "My Account" as title,
-    "0" as stat
-FROM Customer, Product
->>>>>>> origin/master

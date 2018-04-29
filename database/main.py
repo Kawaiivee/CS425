@@ -1,6 +1,6 @@
 HOST = "localhost"
-USER = "root"
-PASSWD = ""
+USER = "ramir"
+PASSWD = "D3f@ultP"
 
 #!/usr/bin/python
 
