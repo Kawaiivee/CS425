@@ -92,6 +92,7 @@ CREATE TABLE IF NOT EXISTS Supplier
 	address		varchar(50) not null,
 	email		varchar(50),
 	phone		varchar(20),
+	password	varchar(50) not null,	-- We will eventually hash this
 	supplier_id 	int AUTO_INCREMENT,
 	supplier_name	varchar(50) NOT NULL,
 	primary key (supplier_id)

@@ -116,12 +116,12 @@ regionList = [
 ]
 
 supplierList = [
-["suppAddr1", "supp1@mail.com", "1234567", "Hershey Chocolate"],
-["suppAddr2", "supp2@mail.com", "2345678", "Jansport"],
-["suppAddr3", "supp3@mail.com", "3456789", "Ticonderoga"],
-["suppAddr4", "supp4@mail.com", "4567890", "Papermate"],
-["suppAddr5", "supp5@mail.com", "5678901", "Hasbro"],
-["suppAddr6", "supp6@mail.com", "6789012", "Intel"],
+["suppAddr1", "supp1@mail.com", "1234567", "password1","Hershey Chocolate"],
+["suppAddr2", "supp2@mail.com", "2345678", "password1", "Jansport"],
+["suppAddr3", "supp3@mail.com", "3456789", "password1", "Ticonderoga"],
+["suppAddr4", "supp4@mail.com", "4567890", "password1", "Papermate"],
+["suppAddr5", "supp5@mail.com", "5678901", "password1", "Hasbro"],
+["suppAddr6", "supp6@mail.com", "6789012", "password1", "Intel"],
 ]
 
 
@@ -240,9 +240,10 @@ for row in supplierList:
 	address = row[0]
 	email = row[1]
 	phone = row[2]
-	supplier_name = row[3]
+	password = row[3]
+	supplier_name = row[4]
 	
-	cursor.execute('''INSERT into Supplier (address, email, phone, supplier_name) values (%s, %s, %s, %s)''', (address, email, phone, supplier_name))
+	cursor.execute('''INSERT into Supplier (address, email, phone,password, supplier_name) values (%s, %s,%s,  %s, %s)''', (address, email, phone,password, supplier_name))
 	db.commit()
 	
 	currentsupplier.append(x)
